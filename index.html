@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title>天天宠物网 - 宠物爱好者网络社区_宠物乐园</title>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="icon" type="text/css" href="img/favicon.ico">
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/angular8.min.js"></script>
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+ 	<header class="clear-fix">
+ 		<a href="#" class="fl"><img src="img/logo.gif"></a>
+ 		<a href="#" class="fl"><img src="img/shouji.gif"></a>
+ 		<div class="input fl">
+ 			<input type="text" name="" placeholder="请输入关键字" class="text">
+ 			<input type="submit" name="" value="搜索" class="tj">
+ 		</div>
+ 		<div class="list fr">
+ 			<div class="top clear-fix">
+ 				<a href="#">网站地图</a>
+ 				<a href="#">宠物训练</a>
+ 				<a href="#">怀孕百宝箱</a>
+ 			</div>
+ 			<div class="bottom">
+ 				<a href="#">疾病百科</a>
+ 				<a href="#">紧急自救</a>
+ 				<a href="#">宠物品中大全</a>
+ 			</div>
+ 		</div>
+ 	</header>
+ 	<nav>
+ 		<div class="nav clear-fix">
+ 			<div class="nav_left fl">
+ 				<ul class="clear-fix">
+ 					<li class="blod xxk"><a href="index.html">首页</a>
+ 						<div class="sj"></div>
+ 					</li>
+ 					<li class="bor">|</li>
+ 					<li class="Thread"><a href="zx.html">资讯</a></li>
+ 					<li class="Thread"><a href="#">专题</a></li>
+ 					<li class="bor">|</li>
+ 					<li class="blod xxk"><a href="#" class="ww wo">窝窝<em></em></a>
+ 						<div class="yinchangww">
+ 							<a href="#">日志</a>
+ 							<a href="#">相册</a>
+ 							<a href="#">视频</a>
+ 							<a href="#">找宠物</a>
+ 						</div>
+ 					</li>
+ 					<li class="bor">|</li>
+ 					<li class="blod xxk"><a href="#" class="ww lt">论坛<em></em></a>
+ 						<div class="yinchanglt">
+ 							<a href="#">我发表的主题</a>
+ 							<a href="#">我参与的主题</a>
+ 							<a href="#">我的论坛签名</a>
+ 						</div>
+ 					</li>
+ 					<li class="bor">|</li>
+ 					<li class="Thread"><a href="#">宠物集</a></li>
+ 					<li class="bor">|</li>
+ 					<li class="Thread"><a href="#">狗狗读心术</a></li>
+ 				</ul>
+ 			</div>
+ 			<div class="nav_right fr">
+ 				<ul>
+ 					<li class="in_login"><a href="#">登录</a></li>
+ 					<li class="in_login"><a href="#">注册</a></li>
+ 					<li class="qtzh">其他账号登录 :</li>
+ 					<li class="qtzh_pad"><a href="#" class="pgy"></a></li>
+ 					<li class="qtzh_pad"><a href="#" class="wb"></a></li>
+ 				</ul>
+ 			</div>
+ 		</div>
+ 	</nav>
+ 	<div class="box">
+ 		<div class="top">
+ 			<!-- top-left -->
+	 		<div class="top_left">
+	 			<em>今日焦点</em>
+	 			<div class="swiper-container" ng-controller="lb">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide" ng-repeat="v in lb">
+				        	<a href="#"><img ng-src="{{v.src}}"></a>
+		 						<div class="bantext">
+									<h3>
+										<a href="{{v.urla}}"  target="_blank" rel="nofollow">{{v.h3}}</a>
+									</h3>
+									<p>
+									{{v.p}}
+									<a href="{{v.url}}" target="_blank" rel="nofollow">详细<<</a>
+									</p>
+								</div>
+				        </div>
+				    </div>
+		   		 	<!-- 如果需要分页器 -->
+				    <div class="swiper-pagination"></div>
+				     <!-- 如果需要导航按钮 -->
+				    <div class="swiper-button-prev"></div>
+				    <div class="swiper-button-next"></div>
+				</div>
+	 		</div>
+	 		<!-- top-right -->
+	 		<div class="top-right" ng-controller="gou">
+	 			<ul >
+	 				<li ng-repeat="v in gou"><a href="#">{{v}}</a></li>
+	 			</ul>
+	 			<ul>
+	 				<li ng-repeat="v in miao"><a href="#">{{v}}</a></li>
+	 			</ul>
+	 			<ul>
+	 				<li ng-repeat="v in tu"><a href="#">{{v}}</a></li>
+	 			</ul>
+	 			<ul>
+	 				<li ng-repeat="v in yu"><a href="#">{{v}}</a></li>
+	 			</ul>
+	 		</div>
+	 		<!-- top-rightend -->
+ 		</div>
+ 		
+ 		<div class="bottom">
+ 			<!--  bottom_left-->
+ 			<div class="bottom_left" ng-controller="yc">
+ 				<!-- 选项卡 -->
+ 				<ul class="zx">
+ 					<h3>资讯</h3>
+ 					<li ng-repeat="v in zx" ng-class="{active:page==$index}" ng-mouseenter="show($index)"><a href="#">{{v}}</a></li>
+ 				</ul>
+ 				<!--选项卡隐藏  -->
+ 				<div class="yc" ng-repeat="v in yc" ng-class="{active:page==$index}">
+ 					<a href="#" class="fl">
+ 						<img ng-src="{{v.src}}">
+ 						<em>{{v.em}}</em>
+ 					</a>
+ 					<div class="wz_r">
+ 						<div class="wz_t">
+ 							<h2><a href="#">{{v.h2}}</a></h2>
+ 							<p>{{v.p}}</p>
+ 							<ul class="cwzj">
+ 								<li>
+ 									<a href="#" class="cq">{{v.cq}}</a>
+ 									<a href="#" class="rq">{{v.rq}}</a>
+ 									<span class="sj">{{v.sj}}</span>
+ 								</li>
+ 								<li>
+ 									<a href="#" class="cq">{{v.cq1}}</a>
+ 									<a href="#" class="rq">{{v.rq1}}</a>
+ 									<span class="sj">{{v.sj1}}</span>
+ 								</li>
+ 								<li>
+ 									<a href="#" class="cq">{{v.cq2}}</a>
+ 									<a href="#" class="rq">{{v.rq2}}</a>
+ 									<span class="sj">{{v.sj2}}</span>
+ 								</li>
+ 								<li>
+ 									<a href="#" class="cq">{{v.cq3}}</a>
+ 									<a href="#" class="rq">{{v.rq3}}</a>
+ 									<span class="sj">{{v.sj3}}</span>
+ 								</li>
+ 								<li>
+ 									<a href="#" class="cq">{{v.cq4}}</a>
+ 									<a href="#" class="rq">{{v.rq4}}</a>
+ 									<span class="sj">{{v.sj4}}</span>
+ 								</li>
+ 								<li>
+ 									<a href="#" class="cq">{{v.cq5}}</a>
+ 									<a href="#" class="rq">{{v.rq5}}</a>
+ 									<span class="sj">{{v.sj5}}</span>
+ 								</li>
+ 							</ul>
+ 						</div>
+ 					</div>
+ 				</div>
+ 			</div>
+ 			<!-- bottom_leftend -->
+ 			<!-- bottom-right -->
+ 			<div class="bottom_right" ng-controller="zt">
+ 				<ul class="zt">
+ 					<li class="active"><a href="#">专题</a></li>
+ 					<li><a href="#">杂志</a></li>
+ 					<span class="bottom_rgd"><a href="#">更多>></a></span>
+ 				</ul>
+ 				<div class="ztxx">
+ 					<!-- 选项卡隐藏1 -->
+	 				<div class="bottom_ryc active boxt">
+	 					<a href="#" ng-repeat="v in ztyc">
+	 						<img ng-src="{{v.src}}"><br/>
+	 						{{v.content}}
+	 					</a>
+	 				</div>
+	 				<!-- 选项卡隐藏2 -->
+	 				<div class="bottom_ryc1 boxt">
+	 					<div class="tm tmr"></div>
+	 					<div class="tm tml"></div>
+	 					<div class="tu">
+	 						<span class="botton bottonl"></span>
+	 						<span class="botton bottonr"></span>
+	 						<ul class="fy">
+	 							<li ng-repeat="v in ztr">
+	 								<a href="#">
+	 									<img ng-src="{{v}}">
+	 								</a>
+	 							</li>
+	 						</ul>
+	 					</div>
+	 				</div>
+ 				</div>
+ 			</div>
+ 			<!-- bottom-rightend -->
+ 		</div>	
+ 	</div>
+ 	<!--图片-->
+ 	<div class="cwsp">
+ 		<div class="img">
+ 			<a href="#">
+ 				<img src="img/Recruitment.gif">
+ 			</a>
+ 		</div>
+ 		<div class="x fr"></div>
+ 	</div>
+ 	<!-- 宠物论坛 -->
+ 	<div class="cwlt" ng-controller="cwlt">
+ 			<!-- left -->
+ 		<div class="cwl fl clear-fix">
+ 			<div class="lb">
+ 				<!-- top -->
+ 				<div class="lbt clear-fix">
+ 					<h3 class="fl">宠物论坛</h3>
+ 					<span class="fr">
+ 						<a href="#">发表主题</a>
+ 						/
+ 						<a href="#">进入论坛</a>
+ 					</span>
+ 				</div>
+ 				<!-- left小轮播 -->
+ 				<div class="cwll fl">
+ 					 <div class="swiper-wrapper">
+				        <div class="swiper-slide" ng-repeat="v in xlb">
+				        <a href="{{v.url}}">
+				        	<img ng-src="{{v.src}}">
+				        	<em>{{v.em}}</em>
+				        </a>
+				        </div>
+			   		 </div>
+				    <!-- 如果需要分页器 -->
+					  <div class="swiper-pagination btn"></div>
+ 				</div>
+ 				<!-- 小轮播end -->
+ 				<!-- rightul -->
+ 				<div class="cwlr fr">
+ 					<ul class="tzz" ng-repeat="v in cwlt">
+ 						<h3><a href="#">{{v.title}}</a></h3>
+ 						<li>
+ 							<a href="#" class="jiu">{{v.hui}}</a>
+ 							<a href="#" class="san">{{v.content}}</a>
+ 						</li>
+ 						<li>
+ 							<a href="#" class="jiu">{{v.huia}}</a>
+ 							<a href="#" class="san">{{v.contenta}}</a>
+ 						</li>
+ 						<li>
+ 							<a href="#" class="jiu">{{v.huib}}</a>
+ 							<a href="#" class="san">{{v.contentb}}</a>
+ 						</li>
+ 					</ul>
+ 				</div>
+ 			</div>
+ 		</div>
+ 			<!-- right -->
+ 			<div class="cwr fr">
+ 				<div class="cwag">
+ 					<!-- 头 -->
+ 					<div class="tou">
+ 						<h3>宠物年龄计算</h3>
+ 					</div>
+ 					<!-- 狗狗 -->
+ 					<div class="gmag">
+ 						<ul class="clear-fix">
+ 							<li class="active"><a href="javascript:;">狗狗</a></li>
+ 							<li><a href="javascript:;">猫猫</a></li>
+ 						</ul>
+ 						<!-- gou -->
+ 						<div class="tx active">
+ 							<div class="dog">
+ 								<p>
+ 									狗狗体型 :
+ 									<select>
+ 										<option value="1">大型犬</option>
+ 										<option value="1">中型犬</option>
+ 										<option value="1">小型犬</option>
+ 									</select>
+ 								</p>
+ 								<p>
+ 									狗龄
+ 									<input type="text" name="">
+ 									岁==人年龄
+ 									<input type="text" name="">
+ 									岁
+ 								</p>
+ 							</div>
+ 							<div class="yongyao">
+ 								<h3>宠物用药剂量计算</h3>
+ 							</div>
+ 							<div class="yyb">
+ 								<p>
+ 									类型
+ 									<select>
+ 										<option value="gou">狗狗</option>
+ 										<option value="miao">猫猫</option>
+ 									</select>
+ 									体重 : 
+
+ 									<input type="text" name="">
+ 									KG
+ 								</p>
+ 								<p>
+ 									人体药物剂量
+ 									<input type="text" name="">
+ 								</p>
+ 								<p class="dianji">
+ 									<input type="botton" name="" value="计算" class="dian">
+ 									<input type="botton" name="" value="重置" class="dian">
+ 								</p>
+ 							</div>
+ 						</div>
+ 						<!-- miao -->
+ 						<div class="tx">
+ 							<div class="dog">
+ 								<p>
+ 									猫咪年龄 :
+ 									<select>
+ 										<option value="0">0</option>
+ 										<option value="1">1</option>
+ 										<option value="2">2</option>
+ 										<option value="3">3</option>
+ 										<option value="4">4</option>
+ 										<option value="5">5</option>
+ 										<option value="6">6</option>
+ 										<option value="7">7</option>
+ 										<option value="8">8</option>
+ 										<option value="9">9</option>
+ 										<option value="10">10</option>
+ 										<option value="11">11</option>
+ 										<option value="12">12</option>
+ 										<option value="13">13</option>
+ 										<option value="14">14</option>
+ 										<option value="15">15</option>
+ 										<option value="16">16</option>
+ 										<option value="17">17</option>
+ 										<option value="18">18</option>
+ 										<option value="19">19</option>
+ 										<option value="20">20</option>
+ 										<option value="21">21</option>
+ 										<option value="22">22</option>
+ 										<option value="23">23</option>
+ 										<option value="24">24</option>
+ 										<option value="25">25</option>
+ 										<option value="26">26</option>
+ 										<option value="27">27</option>
+ 										<option value="28">28</option>
+ 										<option value="29">29</option>
+ 										<option value="30">30</option>
+ 									</select>
+ 									年
+ 									<select>
+ 										<option value="0">0</option>
+ 										<option value="1">1</option>
+ 										<option value="2">2</option>
+ 										<option value="3">3</option>
+ 										<option value="4">4</option>
+ 										<option value="5">5</option>
+ 										<option value="6">6</option>
+ 										<option value="7">7</option>
+ 										<option value="8">8</option>
+ 										<option value="9">9</option>
+ 										<option value="10">10</option>
+ 										<option value="11">11</option>
+ 									</select>
+ 									月
+ 								</p>
+ 								<p>
+ 									相当于人的年龄
+ 									<input type="text" name="">
+ 									岁
+ 									<input type="text" name="">
+ 									月
+ 								</p>
+ 							</div>
+ 							<div class="yongyao">
+ 								<h3>宠物用药剂量计算</h3>
+ 							</div>
+ 							<div class="yyb">
+ 								<p>
+ 									类型
+ 									<select>
+ 										<option value="gou">狗狗</option>
+ 										<option value="miao">猫猫</option>
+ 									</select>
+ 									体重 : 
+
+ 									<input type="text" name="">
+ 									KG
+ 								</p>
+ 								<p>
+ 									人体药物剂量
+ 									<input type="text" name="">
+ 								</p>
+ 								<p class="dianji">
+ 									<input type="botton" name="" value="计算" class="dian">
+ 									<input type="botton" name="" value="重置" class="dian">
+ 								</p>
+ 							</div>
+ 						</div>
+ 						<!-- miaoend -->
+ 					</div>
+ 				</div>
+ 			</div>
+ 			<!-- end -->
+ 	</div>
+ 	<!-- end -->
+ 	<!-- 热门宠物集 -->
+ 	<div class="wozhuo" ng-controller="cwj">
+ 		<div class="wozhuol">
+ 			<div class="wozhuolpad">
+ 				<div class="wozhuolpadtop clear-fix">
+ 					<h3 class="fl">热门宠齐集</h3>
+ 					<span class="fr">
+ 						<a href="#">宠物供求</a>
+ 						/
+ 						<a href="#">宠物服务</a>
+ 						/
+ 						<a href="#">宠物用品</a>
+ 						/
+ 						<a href="#">人才培训</a>
+ 						/
+ 						<a href="#">发布宠物集</a>
+ 					</span>
+ 				</div>
+ 				<div class="wozhuolpadleft fl">
+ 					<a href="#">
+ 						<img src="img/download.jpg">
+ 						<p>最萌最好玩的APP</p>
+ 					</a>
+ 					<a href="#">
+ 						<img src="img/ttindex_wozhua.jpg">
+ 						<p>握爪手机客户端</p>
+ 					</a>
+ 					<a href="#">
+ 						<img src="img/download.jpg">
+ 						<p>最萌最好玩的APP</p>
+ 					</a>
+ 					<a href="#">
+ 						<img src="img/ttindex_wozhua.jpg">
+ 						<p>握爪手机客户端</p>
+ 					</a>
+ 				</div>
+ 				<div class="wozhuolpadright">
+ 					<ul>
+ 						<li ng-repeat="v in cwj">
+ 							<a href="#" class="jiua">[狗狗]</a>
+ 							<a href="#" class="liua">{{v}}</a>
+ 						</li>
+ 					</ul>
+ 					<ul>
+ 						<li ng-repeat="v in cwj1">
+ 							<a href="#" class="jiua">[狗狗]</a>
+ 							<a href="#" class="liua">{{v}}</a>
+ 						</li>
+ 					</ul>
+ 					<ul class="nob">
+ 						<li ng-repeat="v in cwj2">
+ 							<a href="#" class="jiua">[狗狗]</a>
+ 							<a href="#" class="liua">{{v}}</a>
+ 						</li>
+ 					</ul>
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<div class="wozhuor fr">
+ 			<div class="wozhuorbox">
+ 					<!-- top -->
+ 				<div class="yy">
+ 					<h3>应用中心</h3>
+ 				</div>
+ 					<!-- center -->
+ 				<div class="wozhuorcenter">
+ 					<a href="#" ng-repeat="v in zd">
+ 						<img ng-src="{{v.src}}"><br/>
+ 						{{v.content}}
+ 					</a>
+ 				</div>
+ 					<!-- bottom 广告-->
+ 				<div class="wozhuorgg"></div>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<!-- 合作伙伴 -->
+ 	<div class="cooperation" ng-controller="cooperation">
+ 		<strong>
+ 			合作伙伴 :
+ 		</strong>
+ 		<a href="#" ng-repeat="v in cooperation">{{v}}</a>
+ 	</div>
+ 	<!-- 底部 -->
+ 	<div class="lower">
+ 		<a href="#">网站介绍</a> 
+ 		|
+ 		<a href="#">广告服务</a>
+ 		|
+ 		<a href="#">友情链接</a>
+ 		|
+ 		<a href="#">招贤纳士</a>
+ 		|
+ 		<a href="#">版权声明</a>
+ 		|
+ 		<a href="#">联系我们</a>
+ 		|
+ 		<a href="#">网站纠错</a>
+ 		|
+ 		<a href="#">最新文章</a>
+ 		<div class="lowerab">
+ 			<a href="#">沪公网安备 31011302002951</a>
+ 		</div>
+ 		<p>Copyright © 2004-2014 <a href="#">ttpet.com</a>All rights reserved. </p>
+ 		<p>信息产业部 备案序号：沪ICP备16034043号 </p>
+ 	</div>
+ 	<!-- 固定定位 -->
+ 	<div class="fixedbox">
+ 		<a href="javascript:;" class="ewm"></a>
+ 		<a href="javascript:;" class="db"></a>
+ 		<div class="img">
+			<p>扫一扫下载官方APP-握爪</p>
+			<img src="img/app.jpg"> 
+		</div>
+ 	</div>
+</body>
+</html>

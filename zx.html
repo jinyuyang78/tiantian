@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/tiantianchongwu.css">
+<link rel="icon" type="text/css" href="img/favicon.ico">
+<script src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/angular8.min.js"></script>
+<script type="text/javascript" src="js/zxangular.js"></script>
+<script src="js/mengchong.js"></script>
+<title>宠物资讯 - 天天宠物网</title>
+</head>
+<body>
+<div id="box">
+	<header class="clear-fix">
+ 		<a href="#" class="fl"><img src="img/logo.gif"></a>
+ 		<a href="#" class="fl"><img src="img/shouji.gif"></a>
+ 		<div class="input fl">
+ 			<input type="text" name="" placeholder="请输入关键字" class="text">
+ 			<input type="submit" name="" value="搜索" class="tj">
+ 		</div>
+ 		<div class="list fr">
+ 			<div class="top clear-fix">
+ 				<a href="#">网站地图</a>
+ 				<a href="#">宠物训练</a>
+ 				<a href="#">怀孕百宝箱</a>
+ 			</div>
+ 			<div class="bottom">
+ 				<a href="#">疾病百科</a>
+ 				<a href="#">紧急自救</a>
+ 				<a href="#">宠物品中大全</a>
+ 			</div>
+ 		</div>
+ 	</header>
+ 	<nav>
+ 		<div class="nav clear-fix">
+ 			<div class="nav_left fl">
+ 				<ul class="clear-fix">
+ 					<li class="blod xxk"><a href="index.html">首页</a>
+ 						<div class="sj"></div>
+ 					</li>
+ 					<li class="bor">|</li>
+ 					<li class="Thread"><a href="zx.html">资讯</a></li>
+ 					<li class="Thread"><a href="#">专题</a></li>
+ 					<li class="bor">|</li>
+ 					<li class="blod xxk"><a href="#" class="ww wo">窝窝<em></em></a>
+ 						<div class="yinchangww">
+ 							<a href="#">日志</a>
+ 							<a href="#">相册</a>
+ 							<a href="#">视频</a>
+ 							<a href="#">找宠物</a>
+ 						</div>
+ 					</li>
+ 					<li class="bor">|</li>
+ 					<li class="blod xxk"><a href="#" class="ww lt">论坛<em></em></a>
+ 						<div class="yinchanglt">
+ 							<a href="#">我发表的主题</a>
+ 							<a href="#">我参与的主题</a>
+ 							<a href="#">我的论坛签名</a>
+ 						</div>
+ 					</li>
+ 					<li class="bor">|</li>
+ 					<li class="Thread"><a href="#">宠物集</a></li>
+ 					<li class="bor">|</li>
+ 					<li class="Thread"><a href="#">狗狗读心术</a></li>
+ 				</ul>
+ 			</div>
+ 			<div class="nav_right fr">
+ 				<ul>
+ 					<li class="in_login"><a href="#">登录</a></li>
+ 					<li class="in_login"><a href="#">注册</a></li>
+ 					<li class="qtzh">其他账号登录 :</li>
+ 					<li class="qtzh_pad"><a href="#" class="pgy"></a></li>
+ 					<li class="qtzh_pad"><a href="#" class="wb"></a></li>
+ 				</ul>
+ 			</div>
+ 		</div>
+ 	</nav>
+	<div class="zixun" ng-controller="zx">
+		<div class="zixun_con clear-fix">
+			<h3>资讯</h3>
+			<dl class="dl_s">
+				<dt><a href="javascript:;">新闻</a></dt>
+				<dd><a href="javascript:;">焦点</a></dd>
+				<dd><a href="javascript:;">快报</a></dd>
+				<dd><a href="javascript:;">宠圈</a></dd>
+			</dl>
+			<dl class="dl_l">
+				<dt><a href="javascript:;">狗狗</a></dt>
+				<dd ng-repeat="v in gg"><a href="javascript:;">{{v}}</a></dd>
+			</dl>
+			<dl class="dl_l">
+				<dt><a href="javascript:;">猫猫</a></dt>
+				<dd ng-repeat="v in gg"><a href="javascript:;">{{v}}</a></dd>
+			</dl>
+			<dl class="dl_l">
+				<dt><a href="javascript:;">小宠</a></dt>
+				<dd ng-repeat="v in xc"><a href="javascript:;">{{v}}</a></dd>
+			</dl>
+			<dl class="dl_l">
+				<dt><a href="javascript:;">水族</a></dt>
+				<dd ng-repeat="v in sz"><a href="javascript:;">{{v}}</a></dd>
+			</dl>
+			<dl class="dl_s">
+				<dt><a href="javascript:;">花鸟</a></dt>
+				<dd><a href="javascript:;">鸟类</a></dd>
+				<dd><a href="javascript:;">信鸽</a></dd>
+				<dd><a href="javascript:;">花卉</a></dd>
+			</dl>
+		</div>
+	</div>
+	<div class="big-box">
+		<div class="monkey clear-fix">
+			<div class="mon_l fl">
+				<div class="mon_l_t" id="ibanner">
+					<div class="lunbo" id="ibanner_pic">
+						<a href="javascript:;" style="z-index:3;">
+							<img src="img/monkey.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="img/pig.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="img/cat2.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="img/dog3.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="img/dog2.png"/>
+						</a>
+					</div>
+					<div class="lunbo_btn" id="ibanner_btn">
+						<span class="current">1</span>
+						<span class="normal">2</span>
+						<span class="normal">3</span>
+						<span class="normal">4</span>
+						<span class="normal">5</span>
+					</div>
+				</div>
+				<div class="mon_l_b">
+					<ul>
+						<li class="gray">
+							<a href="javascript:;">雪纳瑞<em></em></a>
+						</li>
+						<li class="gray">
+							<a href="javascript:;">比熊<em></em></a>
+							
+						</li>
+						<li class="ora">
+							<a href="javascript:;">哈士奇<em></em></a>
+							
+						</li>
+						<li class="gray">
+							<a href="javascript:;">藏獒<em></em></a>
+							
+						</li>
+						<li class="ora">
+							<a href="javascript:;">泰迪犬<em></em></a>
+							
+						</li>
+						<li class="gray">
+							<a href="javascript:;">京巴犬<em></em></a>
+							
+						</li>
+						<li class="gray">
+							<a href="javascript:;">德国牧羊犬<em></em></a>
+						
+						</li>
+						<li class="gray">
+							<a href="javascript:;">萨摩耶<em></em></a>
+							
+						</li>
+						<li class="gray">
+							<a href="javascript:;">贵宾<em></em></a>
+							
+						</li>
+						<li class="gray">
+							<a href="javascript:;">柴犬<em></em></a>
+							
+						</li>
+						<li class="ora">
+							<a href="javascript:;">英国斗牛犬<em></em></a>
+							
+							<li>
+							<a href="javascript:;">吉娃娃<em></em></a>
+							
+						</li>
+						<li class="gray">
+							<a href="javascript:;">比格犬<em></em></a>
+							
+						</li>
+						<li class="gray">
+							<a href="javascript:;">蝴蝶犬<em></em></a>
+							
+						</li>
+						<li class="gray">
+							<a href="javascript:;">松狮犬<em></em></a>
+							
+						</li>
+						<li class="ora">
+							<a href="javascript:;">法国斗牛犬<em></em></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mon_m fl" ng-controller="xwrd">
+				<h3>新闻热点</h3>
+				<dl class="zx_text">
+					<dt><a href="javascript:;">握爪—天天宠物手机版(官方APP)</a></dt>
+					<dd>
+					「宠物专家」在线解答养宠难题；「买宠物」安全有保障，提供30天赔付保险!
+					<a href="javascript:;">[详情]</a></dd>
+				</dl>
+				<!-- angular  渲染 -->
+				<dl class="zx_squr clear-fix">
+					<dt>
+						<a href="javascript:;">焦点</a>
+					</dt>
+					<dd ng-repeat="v in jd">
+						· <a href="javascript:;">{{v}}</a>
+					</dd>
+				</dl>
+				<dl class="zx_squr clear-fix">
+					<dt>
+						<a href="javascript:;">快报</a>
+					</dt>
+					<dd ng-repeat="v in kb">
+						· <a href="javascript:;">{{v}} </a>
+					</dd>
+				</dl>
+				<dl class="zx_squr clear-fix">
+					<dt>
+						<a href="javascript:;">宠圈</a>
+					</dt>
+					<dd ng-repeat="v in cq">
+						· <a href="javascript:;">{{v}}</a>
+					</dd>
+				</dl>
+			</div>
+			<div class="mon_r fl" ng-controller="zxzt">
+				<span>最新专题</span>
+				<div class="mon_r_c">
+					<a href="javascript:;" ng-repeat="v in zxzt">
+					<img ng-src="{{v.src}}"/>
+					{{v.content}}
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="dog" ng-controller="dog_b">
+			<div class="dog_t clear-fix">
+				<h3 class="fl  dog_t_h">
+					<a href="javascript:;">狗狗</a>
+				</h3>
+				<ul class="fr clear-fix dog_t_u">
+					<li>
+						<a href="javascript:;">品种</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">养护</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">健康</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">繁殖</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">训练</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">美容</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">狗狗品种大全</a>
+					</li>
+				</ul>
+			</div>
+			<div class="dog_b clear-fix">
+				<div class="dog_mg fl">
+					<a href="javascript:;" ng-repeat="v in tp">
+						<img ng-src="{{v.src}}"/>
+						<span>{{v.content}}</span>
+					</a>
+				</div> 
+				<!-- angular................. -->
+				<div class="dog_dl fl clear-fix">
+					<dl class="fl" ng-repeat="v in dl">
+						<dt class="clear-fix">
+							<h3 class="fl">{{v.title}}</h3>
+							<span class="fl"></span>
+							<a class="fl" href="#">更多>></a>
+						</dt>
+						<dd>·<a href="#">{{v.a1}}</a></dd>
+						<dd>
+							·<a href="#">{{v.a2}}</a>
+						</dd>
+						<dd>
+							·<a href="#">{{v.a3}}</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="cat" ng-controller="cat">
+			<div class="cat_t clear-fix">
+				<h3 class="fl  cat_t_h">
+					<a href="javascript:;">猫猫</a>
+				</h3>
+				<ul class="fr clear-fix dog_t_u">
+					<li>
+						<a href="javascript:;">品种</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">养护</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">健康</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">繁殖</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">训练</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">美容</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">猫猫品种大全</a>
+					</li>
+				</ul>
+			</div>
+			<div class="cat_b clear-fix">
+				<div class="cat_b_mg fl">
+					<a href="javascript:;">
+						<img src="img/cat.png"/>
+						<span>猫咪晚上不睡觉怎么回事？</span>
+					</a>
+				</div>
+				<div class="cat_dl fl clear-fix">
+					<dl class="fl" ng-repeat="v in cat">
+						<dt class="clear-fix">
+							<h3 class="fl">{{v.title}}</h3>
+							<span class="fl"></span>
+							<a class="fl" href="#">更多>></a>
+						</dt>
+						<dd>
+							·<a href="#">{{v.a1}}</a>
+						</dd>
+						<dd>
+							·<a href="#">{{v.a2}}</a>
+						</dd>
+						<dd>
+							·<a href="#">{{v.a3}}</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="small" ng-controller="small">
+			<div class="small_t">
+				<h3 class="fl  small_t_h">
+					<a href="javascript:;">小宠</a>
+				</h3>
+				<ul class="fr clear-fix dog_t_u">
+					<li>
+						<a href="javascript:;">兔兔</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">鼠鼠</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">爬行</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">昆虫</a>
+					</li>
+					<li>/</li>
+					<li>
+						<a href="javascript:;">其他</a>
+					</li>
+				</ul>
+			</div>
+			<div class="small_b clear-fix">
+				<div class="small_b_l fl clear-fix ">
+					<dl class="fl" ng-repeat="v in tutu">
+						<dt class="clear-fix">
+							<h3 class="fl">{{v.title}}</h3>
+							<span class="fl"></span>
+							<a class="fl" href="#">更多>></a>
+						</dt>
+						<dd>
+							·<a href="#">{{v.a1}}</a>
+						</dd>
+						<dd>
+							·<a href="#">{{v.a2}}</a>
+						</dd>
+						<dd>
+							·<a href="#">{{v.a3}}</a>
+						</dd>
+					</dl>
+				</div>
+				<div class="small_b_r fl">
+					<div class="small_b_r_img">
+						<img src="img/shu.png"/>
+						<span>仓鼠玩具有哪些？如何自制仓鼠玩具？</span>
+					</div>
+					<ul class="small_b_r_u">
+						<li>
+							<a href="javascript:;">· 我能为狗狗接生做点什么？</a>
+						</li>
+						<li>
+							<a href="javascript:;">· 为拉布拉多犬挑选狗粮的方法</a>
+						</li>
+						<li>
+							<a href="javascript:;">· 帮狗狗养成如厕习惯的方法</a>
+						</li>
+						<li>
+							<a href="javascript:;">· 乖巧狗狗性格塑造大法</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="fish" ng-controller="fish">
+			<div class="fish_l fl">
+				<div class="fish_l_t">
+					<h3 class="fl  fish_t_h">
+						<a href="javascript:;">水族</a>
+					</h3>
+					<ul class="fr clear-fix fish_t_u">
+						<li>
+							<a href="javascript:;">品种</a>
+						</li>
+						<li>/</li>
+						<li>
+							<a href="javascript:;">饲养</a>
+						</li>
+						<li>/</li>
+						<li>
+							<a href="javascript:;">水草</a>
+						</li>
+						<li>/</li>
+						<li>
+							<a href="javascript:;">置景</a>
+						</li>
+						<li>/</li>
+						<li>
+							<a href="javascript:;">鱼病</a>
+						</li>
+						<li>/</li>
+						<li>
+							<a href="javascript:;">器材</a>
+						</li>
+					</ul>
+				</div>
+				<div class="fish_b clear-fix">
+					<dl class="fl" ng-repeat="v in sy">
+						<dt>
+							<h3 class="fl">{{v.title}}</h3>
+							<span class="fl"></span>
+							<a class="fl" href="#">更多>></a>
+						</dt>
+						<dd>
+							· <a href="javascript:;">{{v.a1}}</a>
+						</dd>
+						<dd>
+							· <a href="javascript:;">{{v.a2}}</a>
+						</dd>
+						<dd>
+							· <a href="javascript:;">{{v.a3}}</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="fish_r fr">
+				<div class="fish_r_t clear-fix">
+					<h3 class="fl  fish_t_h">
+						<a href="javascript:;">花鸟</a>
+					</h3>
+					<ul class="fr clear-fix fish_t_u">
+						<li>
+							<a href="javascript:;">鸟类</a>
+						</li>
+						<li>/</li>
+						<li>
+							<a href="javascript:;">信鸽</a>
+						</li>
+						<li>/</li>
+						<li>
+							<a href="javascript:;">花卉</a>
+						</li>
+					</ul>
+				</div>
+				<div class="fish_r_b clear-fix">
+					<dl class="fl" ng-repeat="v in hn">
+						<dt>
+							<h3 class="fl">{{v.title}}</h3>
+							<span class="fl"></span>
+							<a class="fl" href="#">更多>></a>
+						</dt>
+						<dd>
+							· <a href="javascript:;">{{v.a1}}</a>
+						</dd>
+						<dd>
+							· <a href="javascript:;">{{v.a2}}</a>
+						</dd>
+						<dd>
+							· <a href="javascript:;">{{v.a3}}</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="partner">
+			<ul class="clear-fix">
+				<li class="fl">合作伙伴：</li>
+				<li class="fl">
+					<a href="javascript:;">天天宠物手机版-APP</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">大丹犬</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">法国斗牛犬</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">博美犬</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">杜宾犬</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">握爪宠物</a>
+				</li>
+			</ul>
+		</div>
+		<div class="foot">
+			<ul class="clear-fix">
+				<li class="fl">
+					<a href="javascript:;">网站介绍</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">|</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">广告服务</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">|</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">友情链接</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">|</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">招贤纳士</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">|</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">版权声明</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">|</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">联系我们</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">|</a>
+				</li>
+				<li class="fl">
+					<a href="javascript:;">网站纠错</a>
+				</li>
+			</ul>
+			<div class="net">
+				<a href="javascript:;" class="clear-fix">
+					<img class="fl"src="img/net.png"/>
+					<p class="fr">沪公网安备 31011302002951</p>
+				</a>
+			</div>
+			<p>
+				Copyright © 2004-2014
+				<a href="javascript:;">ttpet.com</a>
+				All rights reserved. 
+			</p>
+			<p>信息产业部 备案序号：沪ICP备16034043号 </p>
+		</div>
+	</div>	
+</div>
+</body>
+</html>
